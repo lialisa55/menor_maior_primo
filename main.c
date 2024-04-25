@@ -3,19 +3,19 @@
 
 int main()
 {
-    int a = 0, b = 0, menor_primo = 0, maior_primo = 0;
+    unsigned int a = 0, b = 0, menor_primo = 1, maior_primo = 1;
 
     scanf("%d %d", &a, &b);
 
     for (; a <= b; a++){
         int primo = 1;
         for (int i = 2; i <= a/2; i++){
-            if (a%i==0 && a!=1){
+            if (a%i==0){
                     primo = 0;
             }
         }
         if (primo){
-            if (menor_primo == 0){
+            if (menor_primo == 1){
                     menor_primo = a;
             }
             if (a > maior_primo){
@@ -23,7 +23,7 @@ int main()
             }
         }
     }
-    if (menor_primo == 0){
+    if (menor_primo == 1){
         printf("nenhum primo no intervalo");
     }
     else{
